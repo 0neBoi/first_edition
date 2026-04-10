@@ -1,0 +1,514 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.3
+2 info using node@v22.18.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\23313\study-helper\web\.npmrc
+5 silly config load:file:C:\Users\23313\.npmrc
+6 silly config load:file:C:\Program Files\nodejs\node_global\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\23313\study-helper\web\.npm-cache\_logs\2026-03-29T08_11_52_069Z-
+10 verbose logfile C:\Users\23313\study-helper\web\.npm-cache\_logs\2026-03-29T08_11_52_069Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly idealTree buildDeps
+14 silly fetch manifest katex@^0.16.11
+15 silly packumentCache full:https://registry.npmmirror.com/katex cache-miss
+16 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+17 http fetch GET 200 https://registry.npmmirror.com/katex 319ms (cache miss)
+18 silly packumentCache full:https://registry.npmmirror.com/katex set size:97700 disposed:false
+19 silly fetch manifest markdown-it@^14.1.0
+20 silly packumentCache full:https://registry.npmmirror.com/markdown-it cache-miss
+21 http fetch GET 200 https://registry.npmmirror.com/npm 472ms
+22 http fetch GET 200 https://registry.npmmirror.com/markdown-it 80ms (cache miss)
+23 silly packumentCache full:https://registry.npmmirror.com/markdown-it set size:34717 disposed:false
+24 silly fetch manifest markdown-it-texmath@^1.0.0
+25 silly packumentCache full:https://registry.npmmirror.com/markdown-it-texmath cache-miss
+26 http fetch GET 200 https://registry.npmmirror.com/markdown-it-texmath 55ms (cache miss)
+27 silly packumentCache full:https://registry.npmmirror.com/markdown-it-texmath set size:29788 disposed:false
+28 silly placeDep ROOT katex@0.16.44 OK for: study-helper-web@1.0.0 want: ^0.16.11
+29 silly placeDep ROOT markdown-it@14.1.1 OK for: study-helper-web@1.0.0 want: ^14.1.0
+30 silly placeDep ROOT markdown-it-texmath@1.0.0 OK for: study-helper-web@1.0.0 want: ^1.0.0
+31 silly fetch manifest commander@^8.3.0
+32 silly packumentCache full:https://registry.npmmirror.com/commander cache-miss
+33 silly fetch manifest argparse@^2.0.1
+34 silly packumentCache full:https://registry.npmmirror.com/argparse cache-miss
+35 silly fetch manifest entities@^4.4.0
+36 silly packumentCache full:https://registry.npmmirror.com/entities cache-miss
+37 silly fetch manifest linkify-it@^5.0.0
+38 silly packumentCache full:https://registry.npmmirror.com/linkify-it cache-miss
+39 silly fetch manifest mdurl@^2.0.0
+40 silly packumentCache full:https://registry.npmmirror.com/mdurl cache-miss
+41 silly fetch manifest punycode.js@^2.3.1
+42 silly packumentCache full:https://registry.npmmirror.com/punycode.js cache-miss
+43 silly fetch manifest uc.micro@^2.1.0
+44 silly packumentCache full:https://registry.npmmirror.com/uc.micro cache-miss
+45 http fetch GET 200 https://registry.npmmirror.com/commander 87ms (cache miss)
+46 silly packumentCache full:https://registry.npmmirror.com/commander set size:62204 disposed:false
+47 http fetch GET 200 https://registry.npmmirror.com/argparse 92ms (cache miss)
+48 silly packumentCache full:https://registry.npmmirror.com/argparse set size:9450 disposed:false
+49 http fetch GET 200 https://registry.npmmirror.com/punycode.js 182ms (cache miss)
+50 silly packumentCache full:https://registry.npmmirror.com/punycode.js set size:5359 disposed:false
+51 http fetch GET 200 https://registry.npmmirror.com/uc.micro 184ms (cache miss)
+52 silly packumentCache full:https://registry.npmmirror.com/uc.micro set size:4239 disposed:false
+53 http fetch GET 200 https://registry.npmmirror.com/mdurl 186ms (cache miss)
+54 silly packumentCache full:https://registry.npmmirror.com/mdurl set size:3626 disposed:false
+55 http fetch GET 200 https://registry.npmmirror.com/linkify-it 249ms (cache miss)
+56 silly packumentCache full:https://registry.npmmirror.com/linkify-it set size:14116 disposed:false
+57 http fetch GET 200 https://registry.npmmirror.com/entities 292ms (cache updated)
+58 silly packumentCache full:https://registry.npmmirror.com/entities set size:23218 disposed:false
+59 silly placeDep ROOT commander@8.3.0 OK for: katex@0.16.44 want: ^8.3.0
+60 silly placeDep ROOT argparse@2.0.1 OK for: markdown-it@14.1.1 want: ^2.0.1
+61 silly placeDep node_modules/markdown-it entities@4.5.0 OK for: markdown-it@14.1.1 want: ^4.4.0
+62 silly placeDep ROOT linkify-it@5.0.0 OK for: markdown-it@14.1.1 want: ^5.0.0
+63 silly placeDep ROOT mdurl@2.0.0 OK for: markdown-it@14.1.1 want: ^2.0.0
+64 silly placeDep ROOT punycode.js@2.3.1 OK for: markdown-it@14.1.1 want: ^2.3.1
+65 silly placeDep ROOT uc.micro@2.1.0 OK for: markdown-it@14.1.1 want: ^2.1.0
+66 silly fetch manifest uc.micro@^2.0.0
+67 silly packumentCache full:https://registry.npmmirror.com/uc.micro cache-hit
+68 silly reify moves {}
+69 silly audit bulk request {
+69 silly audit   '@babel/helper-string-parser': [ '7.27.1' ],
+69 silly audit   '@babel/helper-validator-identifier': [ '7.28.5' ],
+69 silly audit   '@babel/parser': [ '7.29.0' ],
+69 silly audit   '@babel/types': [ '7.29.0' ],
+69 silly audit   '@ctrl/tinycolor': [ '4.2.0' ],
+69 silly audit   '@element-plus/icons-vue': [ '2.3.2' ],
+69 silly audit   '@esbuild/aix-ppc64': [ '0.21.5' ],
+69 silly audit   '@esbuild/android-arm': [ '0.21.5' ],
+69 silly audit   '@esbuild/android-arm64': [ '0.21.5' ],
+69 silly audit   '@esbuild/android-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/darwin-arm64': [ '0.21.5' ],
+69 silly audit   '@esbuild/darwin-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/freebsd-arm64': [ '0.21.5' ],
+69 silly audit   '@esbuild/freebsd-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-arm': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-arm64': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-ia32': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-loong64': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-mips64el': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-ppc64': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-riscv64': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-s390x': [ '0.21.5' ],
+69 silly audit   '@esbuild/linux-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/netbsd-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/openbsd-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/sunos-x64': [ '0.21.5' ],
+69 silly audit   '@esbuild/win32-arm64': [ '0.21.5' ],
+69 silly audit   '@esbuild/win32-ia32': [ '0.21.5' ],
+69 silly audit   '@esbuild/win32-x64': [ '0.21.5' ],
+69 silly audit   '@floating-ui/core': [ '1.7.5' ],
+69 silly audit   '@floating-ui/dom': [ '1.7.6' ],
+69 silly audit   '@floating-ui/utils': [ '0.2.11' ],
+69 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+69 silly audit   '@sxzz/popperjs-es': [ '2.11.8' ],
+69 silly audit   '@rollup/rollup-android-arm-eabi': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-android-arm64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-darwin-arm64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-darwin-x64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-freebsd-arm64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-freebsd-x64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-arm-gnueabihf': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-arm-musleabihf': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-arm64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-arm64-musl': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-loong64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-loong64-musl': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-ppc64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-ppc64-musl': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-riscv64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-riscv64-musl': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-s390x-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-x64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-linux-x64-musl': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-openbsd-x64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-openharmony-arm64': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-win32-arm64-msvc': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-win32-ia32-msvc': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-win32-x64-gnu': [ '4.59.0' ],
+69 silly audit   '@rollup/rollup-win32-x64-msvc': [ '4.59.0' ],
+69 silly audit   '@types/estree': [ '1.0.8' ],
+69 silly audit   '@types/lodash': [ '4.17.24' ],
+69 silly audit   '@types/lodash-es': [ '4.17.12' ],
+69 silly audit   '@types/web-bluetooth': [ '0.0.20' ],
+69 silly audit   '@vitejs/plugin-vue': [ '5.2.4' ],
+69 silly audit   '@vue/compiler-core': [ '3.5.30' ],
+69 silly audit   '@vue/compiler-dom': [ '3.5.30' ],
+69 silly audit   '@vue/compiler-sfc': [ '3.5.30' ],
+69 silly audit   '@vue/compiler-ssr': [ '3.5.30' ],
+69 silly audit   '@vue/devtools-api': [ '6.6.4' ],
+69 silly audit   '@vue/reactivity': [ '3.5.30' ],
+69 silly audit   '@vue/runtime-core': [ '3.5.30' ],
+69 silly audit   '@vue/runtime-dom': [ '3.5.30' ],
+69 silly audit   '@vue/server-renderer': [ '3.5.30' ],
+69 silly audit   '@vue/shared': [ '3.5.30' ],
+69 silly audit   '@vueuse/core': [ '12.0.0' ],
+69 silly audit   '@vueuse/metadata': [ '12.0.0' ],
+69 silly audit   '@vueuse/shared': [ '12.0.0' ],
+69 silly audit   'async-validator': [ '4.2.5' ],
+69 silly audit   asynckit: [ '0.4.0' ],
+69 silly audit   axios: [ '1.13.6' ],
+69 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+69 silly audit   'coffee-script': [ '1.12.7' ],
+69 silly audit   'combined-stream': [ '1.0.8' ],
+69 silly audit   csstype: [ '3.2.3' ],
+69 silly audit   dayjs: [ '1.11.19' ],
+69 silly audit   'delayed-stream': [ '1.0.0' ],
+69 silly audit   'dunder-proto': [ '1.0.1' ],
+69 silly audit   'element-plus': [ '2.13.5' ],
+69 silly audit   entities: [ '7.0.1', '4.5.0' ],
+69 silly audit   'es-define-property': [ '1.0.1' ],
+69 silly audit   'es-errors': [ '1.3.0' ],
+69 silly audit   'es-object-atoms': [ '1.1.1' ],
+69 silly audit   'es-set-tostringtag': [ '2.1.0' ],
+69 silly audit   esbuild: [ '0.21.5' ],
+69 silly audit   'estree-walker': [ '2.0.2' ],
+69 silly audit   'follow-redirects': [ '1.15.11' ],
+69 silly audit   'form-data': [ '4.0.5' ],
+69 silly audit   fsevents: [ '2.3.3' ],
+69 silly audit   'function-bind': [ '1.1.2' ],
+69 silly audit   'get-intrinsic': [ '1.3.0' ],
+69 silly audit   'get-proto': [ '1.0.1' ],
+69 silly audit   gopd: [ '1.2.0' ],
+69 silly audit   'has-symbols': [ '1.1.0' ],
+69 silly audit   'has-tostringtag': [ '1.0.2' ],
+69 silly audit   hasown: [ '2.0.2' ],
+69 silly audit   lodash: [ '4.17.23' ],
+69 silly audit   'lodash-es': [ '4.17.23' ],
+69 silly audit   'lodash-unified': [ '1.0.3' ],
+69 silly audit   'magic-string': [ '0.30.21' ],
+69 silly audit   'math-intrinsics': [ '1.1.0' ],
+69 silly audit   'memoize-one': [ '6.0.0' ],
+69 silly audit   'mime-db': [ '1.52.0' ],
+69 silly audit   'mime-types': [ '2.1.35' ],
+69 silly audit   nanoid: [ '3.3.11' ],
+69 silly audit   no: [ '0.0.1' ],
+69 silly audit   'normalize-wheel-es': [ '1.2.0' ],
+69 silly audit   picocolors: [ '1.1.1' ],
+69 silly audit   postcss: [ '8.5.8' ],
+69 silly audit   'proxy-from-env': [ '1.1.0' ],
+69 silly audit   rollup: [ '4.59.0' ],
+69 silly audit   'source-map-js': [ '1.2.1' ],
+69 silly audit   vite: [ '5.4.21' ],
+69 silly audit   vue: [ '3.5.30' ],
+69 silly audit   'vue-router': [ '4.6.4' ],
+69 silly audit   katex: [ '0.16.44' ],
+69 silly audit   'markdown-it': [ '14.1.1' ],
+69 silly audit   'markdown-it-texmath': [ '1.0.0' ],
+69 silly audit   commander: [ '8.3.0' ],
+69 silly audit   argparse: [ '2.0.1' ],
+69 silly audit   'linkify-it': [ '5.0.0' ],
+69 silly audit   mdurl: [ '2.0.0' ],
+69 silly audit   'punycode.js': [ '2.3.1' ],
+69 silly audit   'uc.micro': [ '2.1.0' ]
+69 silly audit }
+70 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\fsevents
+71 silly reify mark deleted [ 'C:\\Users\\23313\\study-helper\\web\\node_modules\\fsevents' ]
+72 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-win32-ia32-msvc
+73 silly reify mark deleted [
+73 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-win32-ia32-msvc'
+73 silly reify ]
+74 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-win32-arm64-msvc
+75 silly reify mark deleted [
+75 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-win32-arm64-msvc'
+75 silly reify ]
+76 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-openharmony-arm64
+77 silly reify mark deleted [
+77 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-openharmony-arm64'
+77 silly reify ]
+78 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-openbsd-x64
+79 silly reify mark deleted [
+79 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-openbsd-x64'
+79 silly reify ]
+80 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-x64-musl
+81 silly reify mark deleted [
+81 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-x64-musl'
+81 silly reify ]
+82 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-x64-gnu
+83 silly reify mark deleted [
+83 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-x64-gnu'
+83 silly reify ]
+84 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-s390x-gnu
+85 silly reify mark deleted [
+85 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-s390x-gnu'
+85 silly reify ]
+86 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-riscv64-musl
+87 silly reify mark deleted [
+87 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-riscv64-musl'
+87 silly reify ]
+88 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-riscv64-gnu
+89 silly reify mark deleted [
+89 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-riscv64-gnu'
+89 silly reify ]
+90 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-ppc64-musl
+91 silly reify mark deleted [
+91 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-ppc64-musl'
+91 silly reify ]
+92 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-ppc64-gnu
+93 silly reify mark deleted [
+93 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-ppc64-gnu'
+93 silly reify ]
+94 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-loong64-musl
+95 silly reify mark deleted [
+95 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-loong64-musl'
+95 silly reify ]
+96 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-loong64-gnu
+97 silly reify mark deleted [
+97 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-loong64-gnu'
+97 silly reify ]
+98 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-arm64-musl
+99 silly reify mark deleted [
+99 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-arm64-musl'
+99 silly reify ]
+100 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-arm64-gnu
+101 silly reify mark deleted [
+101 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-arm64-gnu'
+101 silly reify ]
+102 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-arm-musleabihf
+103 silly reify mark deleted [
+103 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-arm-musleabihf'
+103 silly reify ]
+104 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-linux-arm-gnueabihf
+105 silly reify mark deleted [
+105 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-linux-arm-gnueabihf'
+105 silly reify ]
+106 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-freebsd-x64
+107 silly reify mark deleted [
+107 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-freebsd-x64'
+107 silly reify ]
+108 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-freebsd-arm64
+109 silly reify mark deleted [
+109 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-freebsd-arm64'
+109 silly reify ]
+110 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-darwin-x64
+111 silly reify mark deleted [
+111 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-darwin-x64'
+111 silly reify ]
+112 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-darwin-arm64
+113 silly reify mark deleted [
+113 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-darwin-arm64'
+113 silly reify ]
+114 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-android-arm64
+115 silly reify mark deleted [
+115 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-android-arm64'
+115 silly reify ]
+116 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@rollup\rollup-android-arm-eabi
+117 silly reify mark deleted [
+117 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@rollup\\rollup-android-arm-eabi'
+117 silly reify ]
+118 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\win32-ia32
+119 silly reify mark deleted [
+119 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\win32-ia32'
+119 silly reify ]
+120 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\win32-arm64
+121 silly reify mark deleted [
+121 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\win32-arm64'
+121 silly reify ]
+122 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\sunos-x64
+123 silly reify mark deleted [
+123 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\sunos-x64'
+123 silly reify ]
+124 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\openbsd-x64
+125 silly reify mark deleted [
+125 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\openbsd-x64'
+125 silly reify ]
+126 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\netbsd-x64
+127 silly reify mark deleted [
+127 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\netbsd-x64'
+127 silly reify ]
+128 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-x64
+129 silly reify mark deleted [
+129 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-x64'
+129 silly reify ]
+130 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-s390x
+131 silly reify mark deleted [
+131 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-s390x'
+131 silly reify ]
+132 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-riscv64
+133 silly reify mark deleted [
+133 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-riscv64'
+133 silly reify ]
+134 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-ppc64
+135 silly reify mark deleted [
+135 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-ppc64'
+135 silly reify ]
+136 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-mips64el
+137 silly reify mark deleted [
+137 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-mips64el'
+137 silly reify ]
+138 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-loong64
+139 silly reify mark deleted [
+139 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-loong64'
+139 silly reify ]
+140 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-ia32
+141 silly reify mark deleted [
+141 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-ia32'
+141 silly reify ]
+142 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-arm64
+143 silly reify mark deleted [
+143 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-arm64'
+143 silly reify ]
+144 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\linux-arm
+145 silly reify mark deleted [
+145 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\linux-arm'
+145 silly reify ]
+146 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\freebsd-x64
+147 silly reify mark deleted [
+147 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\freebsd-x64'
+147 silly reify ]
+148 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\freebsd-arm64
+149 silly reify mark deleted [
+149 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\freebsd-arm64'
+149 silly reify ]
+150 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\darwin-x64
+151 silly reify mark deleted [
+151 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\darwin-x64'
+151 silly reify ]
+152 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\darwin-arm64
+153 silly reify mark deleted [
+153 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\darwin-arm64'
+153 silly reify ]
+154 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\android-x64
+155 silly reify mark deleted [
+155 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\android-x64'
+155 silly reify ]
+156 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\android-arm64
+157 silly reify mark deleted [
+157 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\android-arm64'
+157 silly reify ]
+158 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\android-arm
+159 silly reify mark deleted [
+159 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\android-arm'
+159 silly reify ]
+160 verbose reify failed optional dependency C:\Users\23313\study-helper\web\node_modules\@esbuild\aix-ppc64
+161 silly reify mark deleted [
+161 silly reify   'C:\\Users\\23313\\study-helper\\web\\node_modules\\@esbuild\\aix-ppc64'
+161 silly reify ]
+162 http cache linkify-it@https://registry.npmmirror.com/linkify-it/-/linkify-it-5.0.0.tgz 0ms (cache hit)
+163 http cache punycode.js@https://registry.npmmirror.com/punycode.js/-/punycode.js-2.3.1.tgz 0ms (cache hit)
+164 http cache uc.micro@https://registry.npmmirror.com/uc.micro/-/uc.micro-2.1.0.tgz 0ms (cache hit)
+165 http cache mdurl@https://registry.npmmirror.com/mdurl/-/mdurl-2.0.0.tgz 0ms (cache hit)
+166 http cache markdown-it-texmath@https://registry.npmmirror.com/markdown-it-texmath/-/markdown-it-texmath-1.0.0.tgz 0ms (cache hit)
+167 http cache commander@https://registry.npmmirror.com/commander/-/commander-8.3.0.tgz 0ms (cache hit)
+168 http cache markdown-it@https://registry.npmmirror.com/markdown-it/-/markdown-it-14.1.1.tgz 0ms (cache hit)
+169 http cache argparse@https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz 0ms (cache hit)
+170 silly tarball no local data for linkify-it@https://registry.npmmirror.com/linkify-it/-/linkify-it-5.0.0.tgz. Extracting by manifest.
+171 silly tarball no local data for punycode.js@https://registry.npmmirror.com/punycode.js/-/punycode.js-2.3.1.tgz. Extracting by manifest.
+172 http cache entities@https://registry.npmmirror.com/entities/-/entities-4.5.0.tgz 0ms (cache hit)
+173 silly tarball no local data for uc.micro@https://registry.npmmirror.com/uc.micro/-/uc.micro-2.1.0.tgz. Extracting by manifest.
+174 http cache katex@https://registry.npmmirror.com/katex/-/katex-0.16.44.tgz 0ms (cache hit)
+175 silly tarball no local data for mdurl@https://registry.npmmirror.com/mdurl/-/mdurl-2.0.0.tgz. Extracting by manifest.
+176 silly tarball no local data for markdown-it-texmath@https://registry.npmmirror.com/markdown-it-texmath/-/markdown-it-texmath-1.0.0.tgz. Extracting by manifest.
+177 silly tarball no local data for commander@https://registry.npmmirror.com/commander/-/commander-8.3.0.tgz. Extracting by manifest.
+178 silly tarball no local data for markdown-it@https://registry.npmmirror.com/markdown-it/-/markdown-it-14.1.1.tgz. Extracting by manifest.
+179 silly tarball no local data for argparse@https://registry.npmmirror.com/argparse/-/argparse-2.0.1.tgz. Extracting by manifest.
+180 silly tarball no local data for entities@https://registry.npmmirror.com/entities/-/entities-4.5.0.tgz. Extracting by manifest.
+181 silly tarball no local data for katex@https://registry.npmmirror.com/katex/-/katex-0.16.44.tgz. Extracting by manifest.
+182 http fetch POST 404 https://registry.npmmirror.com/-/npm/v1/security/advisories/bulk 62ms
+183 silly audit bulk request failed [object Object]
+184 http fetch POST 404 https://registry.npmmirror.com/-/npm/v1/security/audits/quick 119ms
+185 verbose audit error HttpErrorGeneral: 404 Not Found - POST https://registry.npmmirror.com/-/npm/v1/security/audits/quick - [NOT_IMPLEMENTED] /-/npm/v1/security/* not implemented yet
+185 verbose audit error     at C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-fetch\lib\check-response.js:103:15
+185 verbose audit error     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+185 verbose audit error     at async [getReport] (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\audit-report.js:336:21)
+185 verbose audit error     at async AuditReport.run (C:\Program Files\nodejs\node_modules\npm\node_modules\@npmcli\arborist\lib\audit-report.js:106:19) {
+185 verbose audit error   headers: [Object: null prototype] {
+185 verbose audit error     server: [ 'Tengine' ],
+185 verbose audit error     date: [ 'Sun, 29 Mar 2026 08:11:53 GMT' ],
+185 verbose audit error     'content-type': [ 'application/json' ],
+185 verbose audit error     'transfer-encoding': [ 'chunked' ],
+185 verbose audit error     connection: [ 'keep-alive' ],
+185 verbose audit error     'strict-transport-security': [ 'max-age=5184000' ],
+185 verbose audit error     via: [ 'kunlun8.cn8884[,404666]' ],
+185 verbose audit error     'timing-allow-origin': [ '*' ],
+185 verbose audit error     eagleid: [ '78e23b9e17747719132118633e' ],
+185 verbose audit error     'x-fetch-attempts': [ '1' ]
+185 verbose audit error   },
+185 verbose audit error   statusCode: 404,
+185 verbose audit error   code: 'E404',
+185 verbose audit error   method: 'POST',
+185 verbose audit error   uri: 'https://registry.npmmirror.com/-/npm/v1/security/audits/quick',
+185 verbose audit error   body: {
+185 verbose audit error     error: '[NOT_IMPLEMENTED] /-/npm/v1/security/* not implemented yet'
+185 verbose audit error   },
+185 verbose audit error   pkgid: undefined
+185 verbose audit error }
+186 silly audit error [object Object]
+187 silly audit report null
+188 http fetch GET 200 https://cdn.npmmirror.com/packages/punycode.js/2.3.1/punycode.js-2.3.1.tgz 673ms (cache miss)
+189 http fetch GET 200 https://cdn.npmmirror.com/packages/mdurl/2.0.0/mdurl-2.0.0.tgz 683ms (cache miss)
+190 http fetch GET 200 https://cdn.npmmirror.com/packages/linkify-it/5.0.0/linkify-it-5.0.0.tgz 687ms (cache miss)
+191 http fetch GET 200 https://cdn.npmmirror.com/packages/uc.micro/2.1.0/uc.micro-2.1.0.tgz 691ms (cache miss)
+192 http fetch GET 200 https://cdn.npmmirror.com/packages/commander/8.3.0/commander-8.3.0.tgz 693ms (cache miss)
+193 http fetch GET 200 https://cdn.npmmirror.com/packages/markdown-it-texmath/1.0.0/markdown-it-texmath-1.0.0.tgz 727ms (cache miss)
+194 http fetch GET 200 https://cdn.npmmirror.com/packages/argparse/2.0.1/argparse-2.0.1.tgz 916ms (cache miss)
+195 http fetch GET 200 https://cdn.npmmirror.com/packages/entities/4.5.0/entities-4.5.0.tgz 996ms (cache miss)
+196 http fetch GET 200 https://cdn.npmmirror.com/packages/markdown-it/14.1.1/markdown-it-14.1.1.tgz 1119ms (cache miss)
+197 http fetch GET 200 https://cdn.npmmirror.com/packages/katex/0.16.44/katex-0.16.44.tgz 1537ms (cache miss)
+198 silly ADD node_modules/uc.micro
+199 silly ADD node_modules/punycode.js
+200 silly ADD node_modules/mdurl
+201 silly ADD node_modules/linkify-it
+202 silly ADD node_modules/argparse
+203 silly ADD node_modules/commander
+204 silly ADD node_modules/markdown-it-texmath
+205 silly ADD node_modules/markdown-it
+206 silly ADD node_modules/markdown-it/node_modules/entities
+207 silly ADD node_modules/katex
+208 silly ADD
+209 silly ADD
+210 silly ADD
+211 silly ADD
+212 silly ADD
+213 silly ADD
+214 silly ADD
+215 silly ADD
+216 silly ADD
+217 silly ADD
+218 silly ADD
+219 silly ADD
+220 silly ADD
+221 silly ADD
+222 silly ADD
+223 silly ADD
+224 silly ADD
+225 silly ADD
+226 silly ADD
+227 silly ADD
+228 silly ADD
+229 silly ADD
+230 silly ADD
+231 silly ADD
+232 silly ADD
+233 silly ADD
+234 silly ADD
+235 silly ADD
+236 silly ADD
+237 silly ADD
+238 silly ADD
+239 silly ADD
+240 silly ADD
+241 silly ADD
+242 silly ADD
+243 silly ADD
+244 silly ADD
+245 silly ADD
+246 silly ADD
+247 silly ADD
+248 silly ADD
+249 silly ADD
+250 silly ADD
+251 silly ADD
+252 silly ADD
+253 silly ADD
+254 verbose cwd C:\Users\23313\study-helper\web
+255 verbose os Windows_NT 10.0.26200
+256 verbose node v22.18.0
+257 verbose npm  v10.9.3
+258 notice
+258 notice New major version of npm available! 10.9.3 -> 11.12.1
+258 notice Changelog: https://github.com/npm/cli/releases/tag/v11.12.1
+258 notice To update run: npm install -g npm@11.12.1
+258 notice  { force: true, [Symbol(proc-log.meta)]: true }
+259 verbose exit 0
+260 info ok

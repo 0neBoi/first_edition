@@ -1,0 +1,27 @@
+{
+  "name": "study-helper-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:lan": "vite --mode lan",
+    "build": "vite build",
+    "preview": "vite preview",
+    "preview:lan": "vite preview --mode lan"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "element-plus": "^2.5.0",
+    "katex": "^0.16.11",
+    "markdown-it": "^14.1.0",
+    "markdown-it-texmath": "^1.0.0",
+    "no": "^0.0.1",
+    "vue": "^3.4.0",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "vite": "^5.0.0"
+  }
+}

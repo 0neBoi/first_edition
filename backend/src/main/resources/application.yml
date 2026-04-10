@@ -1,0 +1,57 @@
+server:
+  port: 8080
+  # 默认仅本机；手机/局域网开发请启用 Spring profile `lan`（见 README）
+  address: 127.0.0.1
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: study-helper-backend
+  config:
+    import: optional:classpath:application-local.yml
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/study_helper?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# 阿里云百炼（通义千问）：在控制台创建 API-KEY，勿写入仓库
+# 优先使用环境变量 DASHSCOPE_API_KEY；本地可复制 application-local.yml.example 为 application-local.yml
+dashscope:
+  api-key: ${DASHSCOPE_API_KEY:sk-60626f9450f64b688ed6e847e8071625}
+  model: qwen-turbo
+
+# 上传文件存储目录（相对项目根或绝对路径）
+file:
+  upload-dir: ./uploads
+  max-size: 20MB
+
+# JWT（登录态）
+jwt:
+  secret: study-helper-jwt-secret-change-in-production
+  expire-hours: 168
+
+# 校园公告后台：默认 root / 123456；生产环境务必用环境变量 ADMIN_PASSWORD 覆盖
+admin:
+  username: root
+  password: ${ADMIN_PASSWORD:123456}

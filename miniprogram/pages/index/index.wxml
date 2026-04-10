@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="nav">
+    <navigator url="/pages/ask/ask" class="nav-item">AI 问答</navigator>
+  </view>
+  <view class="title">我的资料</view>
+  <view class="list" wx:if="{{list.length}}">
+    <view class="item" wx:for="{{list}}" wx:key="id" data-id="{{item.id}}" bindtap="goDetail">
+      <text class="item-title">{{item.title}}</text>
+      <text class="item-time">{{item.createTime}}</text>
+    </view>
+  </view>
+  <view class="empty" wx:else>暂无资料，请在 Web 端上传</view>
+</view>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudyHelper 校园学习助手</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <!-- 全屏粒子背景 -->
+    <canvas id="sh-particle-canvas"></canvas>
+
+    <header class="sh-header" data-animate="fade-down">
+        <div class="sh-container sh-header-inner">
+            <div class="sh-logo">
+                <span class="sh-logo-mark">SH</span>
+                <span class="sh-logo-text">StudyHelper 校园工具</span>
+            </div>
+            <nav class="sh-nav">
+                <a href="#features">功能</a>
+                <a href="#scenes">使用场景</a>
+                <a href="#download">下载 / 接入</a>
+                <a href="#about">关于我们</a>
+            </nav>
+            <button class="sh-btn sh-btn-outline">登录 / 注册</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="sh-hero" data-animate="fade-up">
+            <div class="sh-container sh-hero-inner">
+                <div class="sh-hero-content">
+                    <h1>让每一次学习，都更高效</h1>
+                    <p class="sh-hero-subtitle">
+                        StudyHelper 聚合课表、任务清单、打卡提醒、资料管理等核心校园工具，
+                        为高校同学提供一站式学习效率解决方案。
+                    </p>
+                    <div class="sh-hero-actions">
+                        <button class="sh-btn sh-btn-primary">立即开始体验</button>
+                        <button class="sh-btn sh-btn-ghost">预约校园部署</button>
+                    </div>
+                    <div class="sh-hero-metas">
+                        <div>
+                            <strong>3min</strong>
+                            <span>完成账号创建</span>
+                        </div>
+                        <div>
+                            <strong>40%+</strong>
+                            <span>平均作业按时率提升</span>
+                        </div>
+                        <div>
+                            <strong>20+</strong>
+                            <span>高校正在试用</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sh-hero-carousel">
+                    <div class="sh-carousel-window">
+                        <div class="sh-carousel-track">
+                            <article class="sh-card sh-card-elevated sh-slide">
+                                <h3>智能课表</h3>
+                                <p>自动同步教务系统，按日/周展示，提醒上课地点与考勤要求。</p>
+                                <ul>
+                                    <li>一键导入课程</li>
+                                    <li>多终端实时同步</li>
+                                    <li>异常排课智能提醒</li>
+                                </ul>
+                            </article>
+                            <article class="sh-card sh-card-elevated sh-slide">
+                                <h3>任务 & 待办</h3>
+                                <p>课程作业、考试、社团活动统一管理，再也不错过任何一个DDL。</p>
+                                <ul>
+                                    <li>按课程/标签分组</li>
+                                    <li>支持优先级与提醒</li>
+                                    <li>与日历自动联动</li>
+                                </ul>
+                            </article>
+                            <article class="sh-card sh-card-elevated sh-slide">
+                                <h3>资料中心</h3>
+                                <p>课件、笔记、真题统一归档，支持多维度搜索与共享。</p>
+                                <ul>
+                                    <li>云端安全存储</li>
+                                    <li>班级共享空间</li>
+                                    <li>多格式文档预览</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="sh-carousel-dots">
+                        <button class="sh-dot sh-dot-active" data-index="0"></button>
+                        <button class="sh-dot" data-index="1"></button>
+                        <button class="sh-dot" data-index="2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="sh-section" data-animate="fade-up">
+            <div class="sh-container">
+                <div class="sh-section-header">
+                    <h2>围绕真实校园场景设计的核心能力</h2>
+                    <p>覆盖从课前预习、课上记录，到课后复习与考试冲刺的完整学习闭环。</p>
+                </div>
+                <div class="sh-grid-3">
+                    <div class="sh-card sh-card-feature">
+                        <h3>多端协同</h3>
+                        <p>支持 PC、Web、移动端接入，数据云端实时同步。</p>
+                    </div>
+                    <div class="sh-card sh-card-feature">
+                        <h3>教务系统集成</h3>
+                        <p>可按学校定制对接教务系统、学习平台、校园卡系统。</p>
+                    </div>
+                    <div class="sh-card sh-card-feature">
+                        <h3>智能提醒</h3>
+                        <p>基于课程与任务自动生成学习计划和提醒节奏。</p>
+                    </div>
+                    <div class="sh-card sh-card-feature">
+                        <h3>数据统计</h3>
+                        <p>学习时长、任务完成率一目了然，助力自我管理。</p>
+                    </div>
+                    <div class="sh-card sh-card-feature">
+                        <h3>权限与空间</h3>
+                        <p>班级 / 学院 / 学校多级空间划分，精细化权限控制。</p>
+                    </div>
+                    <div class="sh-card sh-card-feature">
+                        <h3>安全合规</h3>
+                        <p>基于企业级标准的数据安全与隐私保护能力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="scenes" class="sh-section sh-section-alt" data-animate="fade-up">
+            <div class="sh-container sh-scenes">
+                <div>
+                    <h2>典型使用场景</h2>
+                    <ul class="sh-list">
+                        <li>个人：课表管理、任务追踪、考试复习规划</li>
+                        <li>班级：资料共享、活动通知、打卡签到</li>
+                        <li>学院：课程群发通知、答疑互动、学习数据看板</li>
+                    </ul>
+                </div>
+                <div class="sh-card sh-card-elevated sh-scenes-right">
+                    <h3>为教务与老师准备的后台</h3>
+                    <p>支持课程统一管理、通知发布、学习数据洞察等能力，可按学校现有流程进行私有化部署或云端托管。</p>
+                    <div class="sh-badges">
+                        <span>支持单点登录</span>
+                        <span>支持校园网内网部署</span>
+                        <span>API 开放对接</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="sh-section" data-animate="fade-up">
+            <div class="sh-container sh-download">
+                <div>
+                    <h2>立即接入 StudyHelper</h2>
+                    <p>我们为不同规模的学校与团队提供灵活的部署与接入方案。</p>
+                    <div class="sh-download-actions">
+                        <button class="sh-btn sh-btn-primary">联系校园负责人</button>
+                        <button class="sh-btn sh-btn-outline">获取接入文档</button>
+                    </div>
+                </div>
+                <ul class="sh-list sh-list-compact">
+                    <li>支持单体部署或 Kubernetes 集群部署</li>
+                    <li>支持与现有统一认证平台（CAS、OAuth 等）对接</li>
+                    <li>可按需求提供品牌视觉与信息架构定制</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about" class="sh-section sh-section-alt" data-animate="fade-up">
+            <div class="sh-container sh-about">
+                <div>
+                    <h2>关于 StudyHelper</h2>
+                    <p>StudyHelper 由一群长期深耕教育与技术领域的团队打造，致力于用产品化思维重构校园学习体验。</p>
+                </div>
+                <div class="sh-about-meta">
+                    <div>
+                        <strong>专注教育场景</strong>
+                        <span>深度理解高校教学流程与管理诉求。</span>
+                    </div>
+                    <div>
+                        <strong>开放 & 可扩展</strong>
+                        <span>以 API 为中心，支持丰富校园应用生态。</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sh-footer">
+        <div class="sh-container sh-footer-inner">
+            <div>
+                <div class="sh-logo">
+                    <span class="sh-logo-mark">SH</span>
+                    <span class="sh-logo-text">StudyHelper 校园工具</span>
+                </div>
+                <p class="sh-footer-copy">© 2026 StudyHelper. 保留所有权利。</p>
+            </div>
+            <div class="sh-footer-links">
+                <a href="#about">团队介绍</a>
+                <a href="#download">商务合作</a>
+                <a href="mailto:contact@studyhelper.example">联系邮箱</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/main.js" defer></script>
+</body>
+</html>

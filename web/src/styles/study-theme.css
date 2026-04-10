@@ -1,0 +1,180 @@
+/* 学习板块：磨砂玻璃卡片、默认/朴素按钮与未选中 Tab 等使用浅色字 */
+
+.main.is-study {
+  position: relative;
+  padding: 0 !important;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.main.is-study .study-main-inner {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* 默认按钮、朴素按钮：未强调态白字 */
+.main.is-study .el-button--default,
+.main.is-study .el-button.is-plain {
+  --el-button-text-color: #ffffff;
+  --el-button-bg-color: rgba(255, 255, 255, 0.08);
+  --el-button-border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff !important;
+}
+
+.main.is-study .el-button--default:hover,
+.main.is-study .el-button.is-plain:hover {
+  --el-button-hover-text-color: #ffffff;
+  --el-button-hover-bg-color: rgba(255, 255, 255, 0.16);
+  --el-button-hover-border-color: rgba(255, 255, 255, 0.45);
+  color: #ffffff !important;
+}
+
+.main.is-study .el-button.is-disabled,
+.main.is-study .el-button.is-disabled:hover {
+  color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* Tabs 未选中项 */
+.main.is-study .el-tabs__item {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.main.is-study .el-tabs__item:hover {
+  color: #ffffff !important;
+}
+
+.main.is-study .el-tabs__item.is-active {
+  color: var(--el-color-primary) !important;
+}
+
+.main.is-study .el-tabs__nav-wrap::after {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* 单选 / 多选标签文字 */
+.main.is-study .el-radio,
+.main.is-study .el-checkbox {
+  --el-radio-text-color: rgba(255, 255, 255, 0.92);
+  --el-checkbox-text-color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.main.is-study .el-radio__label,
+.main.is-study .el-checkbox__label {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* 次级按钮 link：未 hover 也偏白 */
+.main.is-study .el-button.is-link:not(.is-disabled) {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.main.is-study .el-button.is-link.el-button--primary {
+  color: var(--el-color-primary) !important;
+}
+
+/* 磨砂玻璃卡片（学习区内 el-card） */
+.main.is-study .el-card {
+  background: var(--glass-card) !important;
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  border: 1px solid color-mix(in srgb, var(--neon-accent) 22%, rgba(255, 255, 255, 0.12)) !important;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+}
+
+.main.is-study .el-card__header {
+  border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+  color: #f1f5f9;
+}
+
+/* 表格玻璃感 */
+.main.is-study .el-table {
+  background-color: var(--glass-table) !important;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: rgba(255, 255, 255, 0.06);
+}
+
+.main.is-study .el-table th.el-table__cell {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #e2e8f0 !important;
+}
+
+.main.is-study .el-table td.el-table__cell {
+  color: #e5e7eb !important;
+}
+
+.main.is-study .el-table--striped .el-table__body tr.el-table__row--striped td.el-table__cell {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* 输入框在玻璃上的对比 */
+.main.is-study .el-input__wrapper,
+.main.is-study .el-textarea__inner {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15) inset !important;
+}
+
+.main.is-study .el-input__inner,
+.main.is-study .el-textarea__inner {
+  color: #f1f5f9 !important;
+}
+
+/* 下拉 */
+.main.is-study .el-select .el-input__wrapper {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 描述列表 */
+.main.is-study .el-descriptions__body {
+  background-color: var(--glass-table) !important;
+}
+
+.main.is-study .el-descriptions__label,
+.main.is-study .el-descriptions__content {
+  color: #e5e7eb !important;
+}
+
+/* 折叠面板 */
+.main.is-study .el-collapse {
+  --el-collapse-border-color: rgba(255, 255, 255, 0.12);
+  --el-collapse-header-bg-color: rgba(255, 255, 255, 0.05);
+}
+
+.main.is-study .el-collapse-item__header {
+  color: #f1f5f9 !important;
+}
+
+.main.is-study .el-collapse-item__wrap {
+  background-color: transparent !important;
+}
+
+.main.is-study .el-collapse-item__content {
+  color: #e5e7eb !important;
+}
+
+/* 日历 */
+.main.is-study .el-calendar {
+  background: var(--glass-table) !important;
+  --el-calendar-border: rgba(255, 255, 255, 0.1);
+}
+
+.main.is-study .el-calendar__header,
+.main.is-study .el-calendar-table td {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.main.is-study .el-calendar-table .el-calendar-day {
+  color: #e5e7eb;
+}
+
+/* 玻璃面板工具类（无 el-card 的区块） */
+.main.is-study .study-glass-block {
+  background: var(--glass-card);
+  backdrop-filter: blur(18px) saturate(1.25);
+  -webkit-backdrop-filter: blur(18px) saturate(1.25);
+  border: 1px solid color-mix(in srgb, var(--neon-accent) 22%, rgba(255, 255, 255, 0.12));
+  border-radius: 16px;
+  box-shadow: 0 8px 32px var(--glass-shadow);
+}

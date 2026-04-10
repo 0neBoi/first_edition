@@ -1,0 +1,175 @@
+/* 全局：霓虹像素卡通风（主体色由 theme.js 写入 --neon-* 与 data-accent） */
+
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html {
+  --neon-accent: #22d3ee;
+  --neon-accent-rgb: 34, 211, 238;
+  --neon-bg-deep: #0a1628;
+  --neon-bg-mid: #0c1220;
+  /* 随主题色变化的磨砂底（替代固定深蓝 slate-900） */
+  --glass-35: color-mix(in srgb, var(--neon-accent) 9%, rgba(0, 0, 0, 0.35));
+  --glass-38: color-mix(in srgb, var(--neon-accent) 10%, rgba(0, 0, 0, 0.38));
+  --glass-40: color-mix(in srgb, var(--neon-accent) 10%, rgba(0, 0, 0, 0.4));
+  --glass-42: color-mix(in srgb, var(--neon-accent) 12%, rgba(0, 0, 0, 0.45));
+  --glass-45: color-mix(in srgb, var(--neon-accent) 12%, rgba(0, 0, 0, 0.45));
+  --glass-48: color-mix(in srgb, var(--neon-accent) 13%, rgba(0, 0, 0, 0.48));
+  --glass-50: color-mix(in srgb, var(--neon-accent) 14%, rgba(0, 0, 0, 0.5));
+  --glass-52: color-mix(in srgb, var(--neon-accent) 14%, rgba(0, 0, 0, 0.52));
+  --glass-55: color-mix(in srgb, var(--neon-accent) 15%, rgba(0, 0, 0, 0.55));
+  --glass-60: color-mix(in srgb, var(--neon-accent) 15%, rgba(0, 0, 0, 0.58));
+  --glass-65: color-mix(in srgb, var(--neon-accent) 16%, rgba(0, 0, 0, 0.62));
+  --glass-70: color-mix(in srgb, var(--neon-accent) 17%, rgba(0, 0, 0, 0.65));
+  --glass-72: color-mix(in srgb, var(--neon-accent) 17%, rgba(0, 0, 0, 0.68));
+  --glass-75: color-mix(in srgb, var(--neon-accent) 18%, rgba(0, 0, 0, 0.7));
+  --glass-78: color-mix(in srgb, var(--neon-accent) 18%, rgba(0, 0, 0, 0.72));
+  --glass-80: color-mix(in srgb, var(--neon-accent) 19%, rgba(0, 0, 0, 0.75));
+  --glass-85: color-mix(in srgb, var(--neon-accent) 20%, rgba(0, 0, 0, 0.78));
+  --glass-88: color-mix(in srgb, var(--neon-accent) 21%, rgba(0, 0, 0, 0.82));
+  --glass-90: color-mix(in srgb, var(--neon-accent) 21%, rgba(0, 0, 0, 0.85));
+  --glass-92: color-mix(in srgb, var(--neon-accent) 22%, rgba(0, 0, 0, 0.88));
+  --glass-94: color-mix(in srgb, var(--neon-accent) 22%, rgba(0, 0, 0, 0.9));
+  --glass-95: color-mix(in srgb, var(--neon-accent) 23%, rgba(0, 0, 0, 0.9));
+  --glass-96: color-mix(in srgb, var(--neon-accent) 23%, rgba(0, 0, 0, 0.92));
+  --glass-98: color-mix(in srgb, var(--neon-accent) 24%, rgba(0, 0, 0, 0.94));
+  --glass-card: var(--glass-42);
+  --glass-table: var(--glass-35);
+  --glass-shadow: rgba(var(--neon-accent-rgb), 0.32);
+  --glass-shadow-deep: rgba(var(--neon-accent-rgb), 0.38);
+}
+
+html body {
+  font-family: 'VT323', 'PingFang SC', 'Microsoft YaHei', monospace;
+  font-size: 19px;
+  background: var(--neon-bg-deep) !important;
+  color: #f1f5f9;
+}
+
+/* 主区霓虹底（由 App 内 .neon-bg-layer 提供） */
+.neon-bg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(
+    165deg,
+    var(--neon-bg-deep) 0%,
+    color-mix(in srgb, var(--neon-accent) 12%, var(--neon-bg-mid)) 38%,
+    var(--neon-bg-mid) 100%
+  );
+}
+
+.neon-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--neon-accent) 14%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--neon-accent) 14%, transparent) 1px, transparent 1px);
+  background-size: 14px 14px;
+  animation: neon-grid-drift 10s linear infinite;
+}
+
+.neon-glow-orbs {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 28%, color-mix(in srgb, var(--neon-accent) 22%, transparent) 0%, transparent 42%),
+    radial-gradient(circle at 82% 72%, color-mix(in srgb, var(--neon-accent) 16%, transparent) 0%, transparent 38%),
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--neon-accent) 8%, rgba(0, 0, 0, 0.4)) 0%, transparent 55%);
+  animation: neon-glow-pulse 7s ease-in-out infinite;
+}
+
+@keyframes neon-grid-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(14px, 14px);
+  }
+}
+
+@keyframes neon-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.88;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.06);
+  }
+}
+
+html[data-reduce-motion='1'] .neon-bg-anim,
+html[data-reduce-motion='1'] .neon-bg-anim * {
+  animation: none !important;
+}
+
+/* 侧栏与卡片：像素描边 + 霓虹边 */
+.layout .sidebar {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--neon-accent) 10%, var(--neon-bg-deep)) 0%,
+    color-mix(in srgb, var(--neon-accent) 4%, var(--neon-bg-mid)) 100%
+  ) !important;
+  border-right: 2px solid color-mix(in srgb, var(--neon-accent) 45%, transparent) !important;
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.45);
+}
+
+.sidebar-brand,
+.sidebar-menu .el-menu-item,
+.sidebar-menu .el-sub-menu__title {
+  font-family: 'VT323', monospace !important;
+  letter-spacing: 0.02em;
+}
+
+.main.is-study .study-glass-block,
+.main.is-study .el-card {
+  border: 2px solid color-mix(in srgb, var(--neon-accent) 35%, rgba(255, 255, 255, 0.2)) !important;
+  box-shadow:
+    4px 4px 0 rgba(0, 0, 0, 0.35),
+    0 0 20px color-mix(in srgb, var(--neon-accent) 15%, transparent) !important;
+  border-radius: 6px !important;
+  background: var(--glass-55) !important;
+}
+
+.main.is-study {
+  position: relative;
+}
+
+.main.is-study .study-main-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* 去掉各页星空 / 粒子 / 流星 canvas，统一用全局霓虹底 */
+.sh-particle-canvas,
+.materials-canvas,
+.profile-canvas,
+.campus-canvas,
+.schedule-canvas,
+.ask-canvas,
+.bg-canvas,
+.study-meteor-canvas {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+html[data-reduce-motion='1'] .hm-bullet {
+  animation: none !important;
+}
+
+/* 俄罗斯方块飘动层（与霓虹底同区，随主题色绘制） */
+.tetris-float-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+html[data-reduce-motion='1'] .tetris-float-wrap {
+  opacity: 0.35;
+}

@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="title">AI 问答</view>
+  <textarea class="input" placeholder="输入你的问题..." value="{{question}}" bindinput="onInput" maxlength="500" />
+  <button type="primary" loading="{{loading}}" bindtap="ask">提问</button>
+  <view class="answer" wx:if="{{answer}}">
+    <view class="answer-title">回答</view>
+    <text class="answer-text">{{answer}}</text>
+  </view>
+</view>

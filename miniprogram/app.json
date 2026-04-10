@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/material-detail/material-detail",
+    "pages/ask/ask"
+  ],
+  "window": {
+    "navigationBarTitleText": "学习辅助",
+    "navigationBarBackgroundColor": "#1989fa"
+  },
+  "sitemapLocation": "sitemap.json"
+}

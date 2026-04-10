@@ -1,0 +1,4 @@
+# 启用方式：mvn spring-boot:run -Dspring-boot.run.profiles=lan
+# 或在 IDE 的 Active profiles 中填写 lan
+server:
+  address: 0.0.0.0

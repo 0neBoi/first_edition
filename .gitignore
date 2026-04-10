@@ -1,0 +1,15 @@
+# Backend
+backend/target/
+backend/src/main/resources/application-local.yml
+
+# Frontend
+web/node_modules/
+web/dist/
+
+# IDE
+.idea/
+*.iml
+
+# OS
+Thumbs.db
+.DS_Store

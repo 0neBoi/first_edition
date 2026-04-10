@@ -1,0 +1,164 @@
+/* 全局图标：默认矢量（PixelIcon.vue + vectorIconMap），pixel 模式为 16×16 像素格 */
+
+.app-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: -0.18em;
+  flex-shrink: 0;
+  color: var(--el-color-primary);
+}
+
+.app-icon svg {
+  width: 1em;
+  height: 1em;
+}
+
+.nav-with-pix {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.nav-with-pix .pixel-icon,
+.nav-with-pix .app-icon {
+  opacity: 0.98;
+}
+
+/* 侧栏 3D 滚轮父级会栅格化子节点，图标单独提层并略前移，减轻糊边 */
+.sidebar-menu .nav-with-pix .pixel-icon,
+.sidebar-menu .nav-with-pix .app-icon {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.pixel-icon {
+  display: inline-block;
+  vertical-align: -0.15em;
+  flex-shrink: 0;
+  color: var(--el-color-primary);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.pixel-icon--sm {
+  width: 20px;
+  height: 20px;
+}
+
+.pixel-icon--md {
+  width: 24px;
+  height: 24px;
+}
+
+.pixel-icon--lg {
+  width: 30px;
+  height: 30px;
+}
+
+.pixel-icon--nav {
+  width: 26px;
+  height: 26px;
+}
+
+.pixel-icon--xl {
+  width: 36px;
+  height: 36px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-brand-pix {
+  flex-shrink: 0;
+  color: var(--el-color-primary);
+}
+
+.sidebar-brand .app-icon {
+  color: var(--el-color-primary);
+}
+
+.pixel-hero-bits {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  color: var(--el-color-primary);
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(0 0 12px color-mix(in srgb, var(--neon-accent) 35%, transparent));
+}
+
+.pixel-hero-bits--settings .ph-inner {
+  fill: color-mix(in srgb, var(--neon-bg-deep) 88%, transparent);
+}
+
+.pixel-hero-bits--monitor .ph-inner,
+.pixel-hero-bits--books .ph-inner {
+  fill: color-mix(in srgb, var(--neon-bg-deep) 88%, transparent);
+}
+
+.settings-hero-row,
+.materials-hero-row,
+.hm-hero-row {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(16px, 3vw, 32px);
+  flex-wrap: wrap;
+}
+
+.settings-hero-text,
+.materials-hero-text,
+.hm-hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.settings-hero-art,
+.materials-hero-art,
+.hm-hero-art {
+  flex-shrink: 0;
+}
+
+/* 首页统计块小图标 */
+.hm-stat-pix {
+  display: block;
+  margin-bottom: 6px;
+  opacity: 0.9;
+}
+
+.hm-feat-pix {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card-head-pix {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.card-head-pix .pixel-icon,
+.card-head-pix .app-icon {
+  margin-top: 1px;
+}
+
+.login-brand-pix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.login-input-pix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--el-color-primary);
+}

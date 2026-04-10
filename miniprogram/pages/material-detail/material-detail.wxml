@@ -1,0 +1,33 @@
+<view class="container" wx:if="{{material}}">
+  <view class="header">{{material.title}}</view>
+
+  <view class="section">
+    <view class="section-title">知识要点</view>
+    <button type="primary" size="mini" loading="{{extractLoading}}" bindtap="extractKnowledge">AI 提炼要点</button>
+    <view class="knowledge-list" wx:if="{{knowledgeList.length}}">
+      <view class="knowledge-item" wx:for="{{knowledgeList}}" wx:key="id">
+        <text class="kp-title">{{item.title}}</text>
+        <text class="kp-content">{{item.content}}</text>
+      </view>
+    </view>
+    <view class="empty-tip" wx:else>点击上方按钮提炼</view>
+  </view>
+
+  <view class="section">
+    <view class="section-title">模拟题目</view>
+    <view class="gen-row">
+      <picker mode="selector" range="{{[3,4,5,6,7,8,9,10]}}" value="{{questionCount - 3}}" bindchange="onCountChange">
+        <view>题目数：{{questionCount}}</view>
+      </picker>
+      <button type="primary" size="mini" loading="{{genLoading}}" bindtap="generateQuestions">生成题目</button>
+    </view>
+    <view class="question-list" wx:if="{{questionList.length}}">
+      <view class="q-item" wx:for="{{questionList}}" wx:key="id">
+        <text class="q-title">{{index + 1}}. [{{typeLabel(item.type)}}] {{item.questionText}}</text>
+        <view class="q-answer">答案：{{item.answer}}</view>
+        <view class="q-analysis" wx:if="{{item.analysis}}">解析：{{item.analysis}}</view>
+      </view>
+    </view>
+    <view class="empty-tip" wx:else>设置数量后点击生成</view>
+  </view>
+</view>

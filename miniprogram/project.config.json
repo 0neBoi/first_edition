@@ -1,0 +1,13 @@
+{
+  "description": "大学生学习辅助工具 - 微信小程序",
+  "packOptions": { "ignore": [] },
+  "setting": {
+    "urlCheck": false,
+    "es6": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.19.4",
+  "appid": "touristappid",
+  "projectname": "study-helper",
+  "condition": {}
+}
