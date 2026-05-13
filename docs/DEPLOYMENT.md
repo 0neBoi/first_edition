@@ -18,8 +18,14 @@
 
 ## 数据库
 
-1. 初始化表结构：执行 `docs/sql/schema.sql`。  
-2. 若已有旧库，补充练习表：执行 `docs/sql/alter-question-attempt.sql`。
+1. **新环境**：先执行 `docs/sql/schema.sql` 创建库表。  
+2. **建议继续执行**（与当前后端功能一致）：  
+   - `docs/sql/alter-question-attempt.sql`  
+   - `docs/sql/alter-question-answer.sql`  
+   - `docs/sql/migration_campus_announcement.sql`  
+   - `docs/sql/migration_plaza.sql`  
+   - `docs/sql/migration_games_all.sql`（含小恐龙与飞机大战排行榜；与单独的 `migration_dino_leaderboard.sql` / `migration_plane_leaderboard.sql` 勿重复执行）  
+3. **已有旧库**：按上线时间补跑尚未执行过的上述脚本即可。
 
 ## 后端
 

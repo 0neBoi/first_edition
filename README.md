@@ -1,73 +1,82 @@
-# 大学生学习辅助工具
+# 大学生学习辅助 / 校园工具
 
-基于 **Spring Boot + Vue + 微信小程序 + MySQL**，结合 **Qwen（Ollama 本地模型）**，实现：导入文件 → 整理知识要点 → 模拟出题 → AI 问答。
+基于 **Spring Boot + Vue + 微信小程序 + MySQL**，Web 端以「校园工具」为主界面，整合 **学习资料与 AI**、**校园信息**、**广场交流**、**小游戏**、**笔记 / 待办 / 打卡 / 练习闭环** 等。AI 能力通过 **阿里云百炼（通义千问，DashScope HTTP API）** 调用，**不再使用 Ollama / Spring AI**。
 
 ## 功能概览
 
-- **资料导入**：上传 TXT / PDF / DOCX，自动解析为纯文本
-- **知识要点**：基于 Qwen 从资料中提炼知识要点，便于复习
-- **模拟出题**：根据资料内容生成单选、多选、填空、简答等练习题
-- **AI 问答**：针对学习内容向 Qwen 提问
+**学习与资料**
+
+- 注册 / 登录（JWT），资料上传（TXT / PDF / DOCX）、知识要点提炼、模拟出题、AI 问答  
+- 笔记、待办、学习打卡、练习与错题本、复习清单、学习报告  
+
+**校园与社区**
+
+- 课程表、校园地图、校园公告；交流广场 / 闲置（帖子、评论、私信等，需对应 SQL）  
+- 管理员：公告管理、用户管理（管理员账号见配置说明）  
+
+**休闲**
+
+- 小恐龙跑酷、飞机大战（排行榜需对应 SQL）  
+
+**小程序**
+
+- 资料列表与详情、提炼 / 出题、AI 问答等；复杂能力以 Web 为主  
 
 ## 技术栈
 
-| 模块     | 技术 |
-|----------|------|
-| 后端     | Spring Boot 3.2、MyBatis-Plus、MySQL、Spring AI (Ollama) |
-| Web 管理端 | Vue 3、Vite、Element Plus |
-| 学生端   | 微信小程序 |
-| AI       | Qwen（Ollama 本地，如 qwen2.5:0.5b / qwen3:0.8b） |
+| 模块 | 技术 |
+|------|------|
+| 后端 | Spring Boot 3.2、Spring Security、JWT、MyBatis-Plus、MySQL |
+| Web | Vue 3、Vite、Element Plus |
+| 学生端 | 微信小程序 |
+| AI | 阿里云 DashScope（`dashscope-sdk-java`，默认模型可在 `application.yml` 的 `dashscope.model` 调整） |
 
 ## 快速开始
 
 ### 1. 数据库
 
-创建库并执行脚本：
+新建库并执行基础脚本后，按功能补充迁移（**新库建议按顺序全部执行**，与 `docs/DEPLOYMENT.md` 一致）：
 
 ```bash
 mysql -u root -p < docs/sql/schema.sql
+mysql -u root -p study_helper < docs/sql/alter-question-attempt.sql
+mysql -u root -p study_helper < docs/sql/alter-question-answer.sql
+mysql -u root -p study_helper < docs/sql/migration_campus_announcement.sql
+mysql -u root -p study_helper < docs/sql/migration_plaza.sql
+mysql -u root -p study_helper < docs/sql/migration_games_all.sql
 ```
 
-或手动创建库 `study_helper` 后，在 MySQL 客户端中执行 `docs/sql/schema.sql`。
+`migration_games_all.sql` 已包含小游戏排行榜表；若你曾单独执行过 `migration_dino_leaderboard.sql` / `migration_plane_leaderboard.sql`，请勿重复建表。
 
-### 2. Ollama 与 Qwen
+### 2. 通义千问（DashScope）API Key
 
-安装 [Ollama](https://ollama.com/)，并拉取模型（二选一）：
+1. 在阿里云百炼控制台创建 API Key。  
+2. **不要**把真实 Key 写进仓库。任选其一：  
+   - 环境变量：`DASHSCOPE_API_KEY`  
+   - 本地：复制 `backend/src/main/resources/application-local.yml.example` 为 `application-local.yml`，填写 `dashscope.api-key`（该文件已被 `.gitignore` 忽略）  
 
-```bash
-ollama pull qwen2.5:0.5b
-# 或
-ollama pull qwen3:0.8b
-```
-
-若使用 qwen3:0.8b，在 `backend/src/main/resources/application.yml` 中修改：
-
-```yaml
-spring.ai.ollama.chat.options.model: qwen3:0.8b
-```
+详见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)。
 
 ### 3. 后端
 
 ```bash
 cd backend
-# 修改 application.yml 中的数据库账号密码
+# 修改 application.yml 中的数据库连接（或使用环境变量覆盖）
 mvn spring-boot:run
 ```
 
-服务地址：`http://localhost:8080/api`。
+服务地址：`http://localhost:8080/api`（上下文路径为 `/api`）。
 
-**本机 / 局域网 一键切换（后端）**
+**本机 / 局域网（后端）**
 
 | 场景 | 命令 | 说明 |
 |------|------|------|
-| 仅本机可连后端 | `mvn spring-boot:run` | 默认监听 `127.0.0.1:8080` |
-| 手机 / 同 WiFi 可连后端 | `mvn spring-boot:run -Dspring-boot.run.profiles=lan` | 启用 profile `lan`，监听 `0.0.0.0:8080` |
+| 仅本机 | `mvn spring-boot:run` | 默认 `127.0.0.1:8080` |
+| 手机 / 同 WiFi | `mvn spring-boot:run -Dspring-boot.run.profiles=lan` | `0.0.0.0:8080` |
 
-Windows 也可双击 `backend/run-dev-local.bat` 或 `backend/run-dev-lan.bat`。  
-IDE 运行时在 **Active profiles** 中填 `lan` 即与上表第二行等价。  
-配置来自 `application-lan.yml`（仅覆盖 `server.address`）。
+Windows 可使用 `backend/run-dev-local.bat` 或 `backend/run-dev-lan.bat`。IDE 在 **Active profiles** 填 `lan` 与第二行等价。
 
-### 4. Web 管理端
+### 4. Web 前端
 
 ```bash
 cd web
@@ -75,62 +84,56 @@ npm install
 npm run dev
 ```
 
-浏览器访问：`http://localhost:5173`。可在此上传资料、查看资料详情、提炼知识要点、生成题目、使用 AI 问答。
+浏览器访问：`http://localhost:5173`。开发环境下 **推荐不设置** `VITE_API_BASE`，请求走相对路径 **`/api`**，由 Vite 代理到本机 `8080`（见 `web/vite.config.js` 与 `web/.env.development` 注释）。
 
-**本机 / 局域网 一键切换（前端）**
+**本机 / 局域网（前端）**
 
 | 场景 | 命令 | 说明 |
 |------|------|------|
-| 仅本机可打开页面 | `npm run dev` | Vite 只监听 `localhost:5173` |
-| 手机 / 同 WiFi 可打开页面 | `npm run dev:lan` | Vite 监听 `0.0.0.0:5173`，用手机访问 `http://电脑IP:5173` |
-| 构建后本机预览 | `npm run preview` | |
-| 构建后局域网预览 | `npm run preview:lan` | |
+| 仅本机 | `npm run dev` | 默认 `localhost:5173` |
+| 局域网访问 | `npm run dev:lan` | `0.0.0.0:5173`，手机访问 `http://电脑IP:5173` |
+| 构建预览 | `npm run preview` / `npm run preview:lan` | |
 
-**手机或同局域网设备访问（热点 / WiFi）**
-
-1. **前后端都切到局域网模式**：后端用带 `profiles=lan` 的命令（或 `run-dev-lan.bat`），前端执行 `npm run dev:lan`。
-2. 电脑与手机在同一网络（手机开热点给电脑连，或都连同一路由器）。
-3. 在电脑上查 IPv4：Windows 可在 PowerShell 执行 `ipconfig`，看「无线局域网适配器」或「以太网」下的 IPv4（如 `192.168.x.x`）。
-4. 手机浏览器打开：`http://上述IP:5173`（不要用 localhost）。
-5. 若打不开，在 Windows「防火墙」中为 **Node.js**、**Java**（或你的 JDK）勾选「专用/公用网络」允许，或临时关闭防火墙做测试。
-6. 不要设置 `VITE_API_BASE` 为 `localhost`（接口应走相对路径 `/api`，由 Vite 代理到本机 8080）。
-7. **`npm run dev:lan` 使用 Vite `mode=lan`，不会读取 `.env.development`**。若你在 `.env.development` 里配置了 `VITE_*` 变量，局域网开发时请把相同项写到 `.env.lan`（或 `.env`）中。
+手机访问时 **勿** 将 `VITE_API_BASE` 设为 `localhost`（请求会发到手机本机）。`npm run dev:lan` 使用 `mode=lan`，不读取 `.env.development`，局域网所需变量请放在 `.env.lan` 或 `.env`。
 
 ### 5. 微信小程序
 
-1. 用微信开发者工具打开 `miniprogram` 目录。
-2. 在「详情 → 本地设置」中勾选「不校验合法域名」。
-3. 若后端非本机，修改 `miniprogram/app.js` 中 `globalData.baseUrl` 为你的后端地址（如 `http://你的IP:8080/api`）。
-
-小程序可：查看资料列表、进入资料详情（提炼要点、生成题目）、AI 问答。资料上传建议在 Web 端完成。
+1. 用微信开发者工具打开 `miniprogram` 目录。  
+2. 「详情 → 本地设置」勾选「不校验合法域名」。  
+3. 在 `miniprogram/app.js` 中设置 `globalData.baseUrl`（如 `http://你的IP:8080/api`）。  
 
 ## 接口说明
 
-| 接口 | 方法 | 说明 |
-|------|------|------|
-| `/material/upload` | POST | 上传资料（file, userId 可选） |
-| `/material/list` | GET | 资料列表（userId 可选） |
-| `/material/{id}` | GET | 资料详情 |
-| `/knowledge/list` | GET | 某资料的知识要点（materialId） |
-| `/knowledge/extract` | POST | 根据资料 ID 提炼要点（materialId, userId 可选） |
-| `/question/list` | GET | 某资料的题目列表（materialId） |
-| `/question/generate` | POST | 根据资料生成题目（materialId, count, userId 可选） |
-| `/qwen/ask` | POST | AI 问答（question） |
+接口较多且带鉴权，完整路径均以 `/api` 为前缀（与 `server.servlet.context-path` 一致）。常用示例：
+
+| 路径（相对 `/api`） | 方法 | 说明 |
+|---------------------|------|------|
+| `/auth/register`、`/auth/login`、`/auth/me` | POST/GET | 注册、登录、当前用户 |
+| `/material/upload`、`/material/list`、`/material/{id}` | POST/GET | 资料上传与查询 |
+| `/knowledge/list`、`/knowledge/extract` | GET/POST | 知识要点 |
+| `/question/list`、`/question/generate` | GET/POST | 题目 |
+| `/qwen/ask` | POST | AI 问答 |
+
+更多模块见 `backend/.../controller/` 下各 `*Controller.java`。
 
 ## 目录结构
 
 ```
 study-helper/
 ├── backend/          # Spring Boot 后端
-├── web/              # Vue 管理端
+├── web/              # Vue 前端（校园工具 + 学习）
 ├── miniprogram/      # 微信小程序
-├── docs/sql/         # 数据库脚本
+├── docs/             # 说明文档与 SQL
+│   ├── sql/
+│   ├── DEPLOYMENT.md
+│   └── 如何运行.md
 ├── PROJECT_STRUCTURE.md
 └── README.md
 ```
 
-## 说明
+## 其它说明
 
-- 上传文件会保存在后端配置的 `file.upload-dir`（默认 `./uploads`）。
-- 提炼要点与生成题目会调用本地 Ollama，请确保 Ollama 已启动且模型已拉取。
-- 内容过长时，会截断前约 5000 字再交给模型，以控制 token 与响应时间。
+- 上传文件保存在 `file.upload-dir`（默认 `./uploads`）。  
+- 提炼要点、生成题目、AI 问答依赖 DashScope；未配置 Key 时这些接口会失败，其它功能多数仍可用。  
+- 内容过长时可能会截断后再送模型，以控制耗时与 token。  
+- 更细的逐步操作见 [docs/如何运行.md](docs/如何运行.md)。
