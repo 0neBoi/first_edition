@@ -1,7 +1,7 @@
 # 复制本文件为同目录下的 application-local.yml（该文件已被 Git 忽略），填入真实密钥后本地启动。
 # 或在系统环境变量中设置 DASHSCOPE_API_KEY，无需此文件。
 dashscope:
-  api-key: "sk-60626f9450f64b688ed6e847e8071625"
+  api-key: "sk-60626f945"
 
 # 可选：覆盖校园公告管理员 root 的登录密码（默认见主配置 application.yml）
 # admin:
